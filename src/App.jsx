@@ -5,18 +5,19 @@
 // import PropsHome from './concepts/props/PropsHome'
 // import PropsTaskHome from './concepts/props/propsTask/PropsTaskHome'
 // import Icons_Implement from './concepts/icons_implementation/Icons_Implement'
-import HooksHome from './concepts/hooks/HooksHome'
+// import HooksHome from './concepts/hooks/HooksHome'
 // import ReactFragments from './concepts/fragments/ReactFragments'
 // import ListAndKeys from './concepts/listandkeys/ListAndKeys'
 // import FormHandling from './concepts/formhandling/FormHandling'
 import { ToastContainer } from 'react-toastify'
 // import AxiosConcept from './concepts/axiosconcept/AxiosConcept'
-import Tailwindcssconcept from './concepts/tailwindcssconcept/Tailwindcssconcept'
-import RouterLayout from './concepts/reactrouting/RouterLayout'
-import PropsDrilling from './concepts/propsdrilling/PropsDrilling'
-import ContextApiConcept from './concepts/contextapi/ContextApiConcept'
-import HOC from './concepts/hoc/HOC'
-import ReactOptimization from './concepts/optimization/ReactOptimization'
+// import Tailwindcssconcept from './concepts/tailwindcssconcept/Tailwindcssconcept'
+// import RouterLayout from './concepts/reactrouting/RouterLayout'
+// import PropsDrilling from './concepts/propsdrilling/PropsDrilling'
+// import ContextApiConcept from './concepts/contextapi/ContextApiConcept'
+// import HOC from './concepts/hoc/HOC'
+// import ReactOptimization from './concepts/optimization/ReactOptimization'
+import CrudOperationHome from './concepts/crudoperation/CrudOperationHome'
 
 const App = () => {
   return (
@@ -28,7 +29,7 @@ const App = () => {
         {/* <PropsHome/> */}
         {/* <PropsTaskHome/> */}
         {/* <Icons_Implement/> */}
-        <HooksHome/>
+        {/* <HooksHome/> */}
         {/* <ReactFragments/> */}
         {/* <ListAndKeys/> */}
         {/* <FormHandling/> */}
@@ -39,7 +40,7 @@ const App = () => {
         {/* <ContextApiConcept/> */}
         {/* <HOC/> */}
         {/* <ReactOptimization/> */}
-
+      <CrudOperationHome/>
 
         <ToastContainer/>
     </div>
