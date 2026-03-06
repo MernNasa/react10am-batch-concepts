@@ -6,6 +6,8 @@ import Contact from "../pages/Contact";
 import Help from "../pages/Help";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
+import UserDashboard from "../dashboard/UserDashboard";
+import PrivateRouting from "../privaterouting/PrivateRouting";
 
 
 export const routes=createBrowserRouter([
@@ -28,6 +30,12 @@ export const routes=createBrowserRouter([
             {
                 path:"/help",
                 element:<Help/>
+            },
+            {
+                path:"/dashboard",
+                element:<PrivateRouting>
+                    <UserDashboard/>
+                </PrivateRouting>
             }
         ]
     },

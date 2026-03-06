@@ -1,5 +1,7 @@
 import axios from 'axios';
 import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 const Register = () => {
 
@@ -13,6 +15,9 @@ const Register = () => {
     gender: ""
   });
 
+  const navigate=useNavigate()
+  const {username,age,email,password,dob,city,gender}=formData
+
   const handleChange = (e) => {
     const { name, value } = e.target;
 
@@ -22,28 +27,37 @@ const Register = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleform = async(e) => {
     e.preventDefault()
     console.log(formData);
 
     //! send the data to backend for register purpose
     // if register done successfully then navigate to login page
         try {
-           const {data}=   axios.post("http://localhost:3000/users",formData)
-           console.log(data)
+          if(!username || !age|| !email || !password || !dob || !city || !gender  ){
+            toast.error("All fileds are required",{position:"top-center"})
+            return
+          }
+          const {data}=await axios.post("http://localhost:3000/users",formData)
+          console.log(data)
+          toast.success("Register successfully",{position:"top-right"})
+          setFormData(
+            {
+              username: "",
+              age: "",
+              email: "",
+              password: "",
+              dob: "",
+              city: "",
+              gender: ""
+            }
+          )
+          navigate("/login")
+            
         } catch (error) {
             console.log(error)
         }
-    setFormData({
-    username: "",
-    age: "",
-    email: "",
-    password: "",
-    dob: "",
-    city: "",
-    gender: ""
-  });
-
+    
   };
 
   return (
@@ -55,7 +69,7 @@ const Register = () => {
           Register
         </h2>
 
-        <form onSubmit={handleSubmit} className="space-y-4">
+        <form onSubmit={handleform} className="space-y-4">
 
           {/* Username */}
           <input
@@ -155,6 +169,7 @@ const Register = () => {
 
           {/* Submit Button */}
           <button
+            type='submit'
             className="w-full py-2 text-white font-semibold rounded-md 
             bg-gradient-to-r from-indigo-500 to-blue-500 
             hover:from-indigo-600 hover:to-blue-600 transition"
