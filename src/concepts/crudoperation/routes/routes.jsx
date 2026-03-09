@@ -11,6 +11,7 @@ import PrivateRouting from "../privaterouting/PrivateRouting";
 import DashboardHome from "../dashboard/dashboardpages/DashboardHome";
 import Profile from "../dashboard/dashboardpages/Profile";
 import UpdateProfile from "../dashboard/dashboardpages/UpdateProfile";
+import UpdateStatus from "../privaterouting/UpdateStatus";
 
 
 export const routes=createBrowserRouter([
@@ -20,7 +21,9 @@ export const routes=createBrowserRouter([
         children:[
             {
                 path:"/",
-                element:<Home/>
+                element:<UpdateStatus>
+                    <Home/>
+                    </UpdateStatus>
             },
             {
                 path:"/about",
@@ -45,11 +48,11 @@ export const routes=createBrowserRouter([
                         element:<DashboardHome/>
                     },
                     {
-                        path:"/dashboard/profile",
+                        path:"/dashboard/profile/:userId",
                         element:<Profile/>
                     },
                     {
-                        path:"/dashboard/updateprofile",
+                        path:"/dashboard/updateprofile/:userId",
                         element:<UpdateProfile/>
                     }
                 ]

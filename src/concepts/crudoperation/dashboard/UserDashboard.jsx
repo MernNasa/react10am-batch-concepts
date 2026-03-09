@@ -10,6 +10,8 @@ import { GlobalcontextApi } from '../context/Globalcontext'
 import { toast } from 'react-toastify'
 
 const UserDashboard = () => {
+   const id=JSON.parse(localStorage.getItem("jwt_token")).split(".")[2]
+  // console.log(id)
   const dashboardlist=[
     {
       text:"Dashboard",
@@ -18,14 +20,10 @@ const UserDashboard = () => {
     },
     {
       text:"Profile",
-      path:"/dashboard/profile",
+      path:`/dashboard/profile/${id}`,
       icon:<FaUserCircle />
     },
-    {
-      text:"update profile",
-      path:"/dashboard/updateprofile",
-      icon:<TbUserEdit />
-    },
+    
     {
       text:"add notes",
       path:"/addnotes",
@@ -39,9 +37,7 @@ const UserDashboard = () => {
   ]
   const navigate=useNavigate()
   const {setCurrentuser}=useContext(GlobalcontextApi)
-  const id=JSON.parse(localStorage.getItem("jwt_token")).split(".")[2]
-  console.log(id)
-
+ 
   const fdata=async (params) => {
     const {data}=await axios.get(`http://localhost:3000/users/${id}`)
     setCurrentuser(data)

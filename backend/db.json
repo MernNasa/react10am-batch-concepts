@@ -1,16 +1,6 @@
 {
   "users": [
     {
-      "id": "61c5",
-      "username": "sundari",
-      "age": "21",
-      "email": "sundari@gmail.com",
-      "password": "12345",
-      "dob": "2026-03-26",
-      "city": "Hyderabad",
-      "gender": "Female"
-    },
-    {
       "id": "9e8c",
       "username": "Leela",
       "age": "21",
