@@ -24,6 +24,7 @@ import ReduxToolkitConcept from './concepts/reduxtoolkitconcept/ReduxToolkitConc
 import Login from './concepts/reduxtoolkitconcept/Login'
 import CustomHooks from './concepts/customhooks/CustomHooks'
 import GitHubusersFetch from './concepts/customhooks/GitHubusersFetch'
+import ReactWithFireBase from './concepts/firebaseconcept/ReactWithFireBase'
 
 const App = () => {
   return (
@@ -52,7 +53,8 @@ const App = () => {
       {/* <ReduxToolkitConcept/> */}
       {/* <Login/> */}
       {/* <CustomHooks/> */}
-      <GitHubusersFetch/>
+      {/* <GitHubusersFetch/> */}
+      <ReactWithFireBase/>
 
         <ToastContainer/>
     </div>
